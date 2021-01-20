@@ -4,11 +4,16 @@ defmodule BST.MixProject do
   def project do
     [
       app: :binary_search_tree,
+      escript: escript(),
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
+  end
+
+  defp escript do
+    [main_module: BST.Main]
   end
 
   # Run "mix help compile.app" to learn about applications.

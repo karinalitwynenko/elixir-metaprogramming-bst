@@ -21,7 +21,7 @@ defmodule Operations do
   defmacro tree_printing() do
     quote do
       def print_tree do
-        IO.puts(unquote(BST.print_tree(insert_nodes(TreeDef.get_tree_nodes()), "", "")))
+        IO.puts("\n" <> unquote(BST.print_tree(insert_nodes(TreeDef.get_tree_nodes()), "", "")))
       end
     end
   end

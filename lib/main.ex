@@ -1,4 +1,4 @@
-defmodule Main do
+defmodule BST.Main do
   @moduledoc """
 
   ## Examples
@@ -12,19 +12,20 @@ defmodule Main do
       left: nil,
       right: %{data: 3, left: nil, right: %{data: 5, left: nil, right: nil}}
       }
-  """
 
-  require BST
+      # iex> tree = BST.insert(BST.insert(nil, 2), 3)
+      # iex> IO.inspect(tree)
+      # %{data: 2, left: nil, right: %{data: 3, left: nil, right: nil}}
+  """
   use Operations
-  require Config
 
   @doc """
   Creates traversal functions for a tree defined in the TreeDef module.
    ## Examples
 
-      iex> Main.in_order()
-      iex> Main.pre_order()
-      iex> Main.post_order()
+      iex> BST.Main.in_order()
+      iex> BST.Main.pre_order()
+      iex> BST.Main.post_order()
   """
   Operations.tree_traversal()
 
@@ -32,8 +33,14 @@ defmodule Main do
   Creates tree printing function.
   ## Examples
 
-      iex> Main.print_tree()
+      iex> BST.Main.print_tree()
   """
   Operations.tree_printing()
 
+  def main(_args) do
+    IO.inspect(in_order())
+    IO.inspect(pre_order())
+    IO.inspect(post_order())
+    # print_tree()
+  end
 end
