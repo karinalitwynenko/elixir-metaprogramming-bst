@@ -1,12 +1,4 @@
-defmodule BST do
-  @moduledoc """
-
-  ## Examples
-
-      iex> BST.insert(nil, 2)
-      %{data: 2, left: nil, right: nil}
-
-  """
+defmodule BST.NODES do
 
   def insert(nil, data), do: %{data: data, left: nil, right: nil}
 
