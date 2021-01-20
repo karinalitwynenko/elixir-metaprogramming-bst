@@ -1,14 +1,12 @@
 defmodule BST.Main do
-  import BST.Operations
-  alias BST.Operations
-
-  Operations.tree_traversal()
-  Operations.tree_printing()
+  alias BST.NODES
+  alias BST.TreeDef
 
   def main(_args) do
-    print_tree()
-    IO.inspect(in_order())
-    IO.inspect(pre_order())
-    IO.inspect(post_order())
+    tree = NODES.insert_nodes(TreeDef.get_tree_nodes())
+    IO.puts(NODES.print_tree(tree, "", ""))
+    IO.inspect(NODES.in_order(tree))
+    IO.inspect(NODES.pre_order(tree))
+    IO.inspect(NODES.post_order(tree))
   end
 end
